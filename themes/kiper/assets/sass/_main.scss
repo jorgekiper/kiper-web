@@ -156,7 +156,7 @@ $white: #ffffff;
     width: 100%; height: auto; display: block; text-align: center; @include fluid-type(9px, 16px, 320px, 1200px); color: $gris; font-family: 'Gotham-Light'; font-weight: 600; padding: 0; margin: 0 0 10px; line-height: 1;
   }
   &__monto {
-    width: 100%; height: auto; display: block; text-align: center; font-family: 'GothamMedium'; padding: 0; margin: 0; line-height: 1;
+    width: 100%; height: auto; display: block; text-align: center; font-family: 'GothamMedium'; padding: 0; margin: 0; line-height: 1; @include transition(all 300ms ease);
     &--black {
       color: $gris; margin-bottom: 15px; @include fluid-type(18px, 50px, 320px, 1200px);
       @media all and (min-width: 992px) {
@@ -165,6 +165,12 @@ $white: #ffffff;
     }
     &--red {
       color: $rojo; @include fluid-type(18px, 70px, 320px, 1200px);
+    }
+    &.selPrice {
+      @include fluid-type(18px, 70px, 320px, 1200px); color: $rojo;
+    }
+    &.notSelPrice {
+      @include fluid-type(18px, 70px, 320px, 1200px); color: $rojo;
     }
   }
   &__usuario {
@@ -413,9 +419,12 @@ form {
 }
 
 .playImg {
-  @include position(absolute, 58vw null null 5.2%); display: block; width: 100%; max-width: 100px; height: auto; padding: 0; margin: 0;
+  @include position(absolute, 58vw null null 5.2%); display: block; width: 100%; max-width: 100px; height: auto; padding: 0; margin: 0; text-decoration: none;
+  & img {
+    width: 100%; height: auto; padding: 0; margin: 0; border: 0; display: block;
+  }
   @media all and (min-width: 768px) {
-    max-width: 150px; top: 31vw; left: 6.2%; max-width: 150px;
+    max-width: 150px; top: 31vw; left: 6.2%;
   }
 }
 
@@ -660,4 +669,16 @@ form {
   & .wpcf7-spinner {
     @include position(absolute, null null 5px 50%); @include transform(translateX(-50%)); margin: 0;
   }
+}
+.embed-responsive {
+  position: relative; display: block; width: 100%; padding: 0; overflow: hidden;
+}
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+.embed-responsive::before {
+  display: block; content: '';
+}
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+  @include position(absolute, 0 null 0 0); width: 100%; height: 100%; border: 0;
 }

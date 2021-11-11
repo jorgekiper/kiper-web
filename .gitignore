@@ -25,5 +25,5 @@ storage/cms/combiner/*
 storage/cms/cache/*
 storage/logs/system.log
 storage/framework/cache/*
-storage/app/uploads/**
-storage/temp/public/**
+#storage/app/uploads/**
+#storage/temp/public/**
