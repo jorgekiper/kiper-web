@@ -470,7 +470,7 @@ section{
 	position: relative;
 	width: 100%;
 	/* height: 36vw; */
-	height: 31vw;
+	height: 12vw;
 }
 .content_pregunta_movil{
         /* visibility: hidden; */
@@ -1052,7 +1052,7 @@ width: 70%;
 }
 .section_pregunta{
         /* height: 60vw; */
-        height: 65vw;
+        height: 45vw;
 }
 .content_pregunta{
         /* visibility: hidden; */

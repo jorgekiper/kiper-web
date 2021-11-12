@@ -159,6 +159,12 @@ $white: #ffffff;
     width: 100%; height: auto; display: block; text-align: center; font-family: 'GothamMedium'; padding: 0; margin: 0; line-height: 1; @include transition(all 300ms ease);
     &--black {
       color: $gris; margin-bottom: 15px; @include fluid-type(18px, 50px, 320px, 1200px);
+      & .price-old {
+        font-size: rem(14px); color: $gris; text-decoration:line-through; display: block;
+      }
+      & .moneda {
+        @include fluid-type(13px, 20px, 320px, 1200px); vertical-align: middle; margin-left: 6px;
+      }
       @media all and (min-width: 992px) {
         margin-bottom: 30px;
       }
@@ -167,9 +173,6 @@ $white: #ffffff;
       color: $rojo; @include fluid-type(18px, 70px, 320px, 1200px);
     }
     &.selPrice {
-      @include fluid-type(18px, 70px, 320px, 1200px); color: $rojo;
-    }
-    &.notSelPrice {
       @include fluid-type(18px, 70px, 320px, 1200px); color: $rojo;
     }
   }
